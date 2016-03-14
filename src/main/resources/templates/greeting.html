@@ -11,10 +11,12 @@ $.get( "ajax/test.html", function( data ) {
 	  alert( "Load was performed." );
 	});
 var restUrl = "http://localhost:8080/testGet"
-	$( document ).ready(function() {
-	  $.get(restUrl, function( data ) {
-	    alert( "total user " + data );
-	  });
+	$( document ).ready(function() {		
+		$("#submit").click(function () {
+			$.get(restUrl, function( data ) {
+			    alert( "total user " + data );
+			  });
+			});	  
 	});
 
 </script>
@@ -22,7 +24,7 @@ var restUrl = "http://localhost:8080/testGet"
 <body>
     <p th:text="'Hello, ' + ${name} + '!'" />
     
-    
+    <input type="submit" value="submit" name="submit" id="submit"> </input>
 
 
 </body>
